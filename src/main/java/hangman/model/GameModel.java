@@ -12,8 +12,7 @@
 ****************************************************************/ 
 package hangman.model;
 
-import com.google.inject.Inject;
-import hangman.model.dictionary.DictionaryHangman;
+import hangman.model.dictionary.HangmanDictionary;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -27,7 +26,7 @@ public class GameModel {
     private int[] lettersUsed;
     
     
-    private DictionaryHangman dictionary;
+    private HangmanDictionary dictionary;
     
     private Scanner scan;
     private String randomWord;
@@ -35,7 +34,7 @@ public class GameModel {
     
     
    
-    public GameModel(DictionaryHangman dictionary){
+    public GameModel(HangmanDictionary dictionary){
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
         randomWord = selectRandomWord();

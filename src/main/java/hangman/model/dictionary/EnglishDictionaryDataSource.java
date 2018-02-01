@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author hcadavid Modified by fchaves
  */
-public class EnglishDictionaryDataSource extends DictionaryHangman {
+public class EnglishDictionaryDataSource extends HangmanDictionary {
 
     static private String words[] = {
         "PLAYER",

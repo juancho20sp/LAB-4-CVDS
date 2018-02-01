@@ -15,6 +15,8 @@ package hangman.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+
+import hangman.GUI;
 import hangman.SwingProject;
 import hangman.model.FunctionModel;
 import hangman.view.FunctionPanel;
@@ -70,13 +72,13 @@ public class FunctionController {
         });
         panel.getPlayButton().addActionListener((ActionEvent e) -> {
             gameControllerReference.resetGame();
-            rootController.changeVisibleCard(SwingProject.GAME_KEY);
+            rootController.changeVisibleCard(GUI.GAME_KEY);
         });
         panel.getHighScoresButton().addActionListener((ActionEvent e) -> {
-            rootController.changeVisibleCard(SwingProject.HIGH_SCORE_KEY);
+            rootController.changeVisibleCard(GUI.HIGH_SCORE_KEY);
         });
         panel.getCreditsButton().addActionListener((ActionEvent e) -> {
-            rootController.changeVisibleCard(SwingProject.CREDITS_KEY);
+            rootController.changeVisibleCard(GUI.CREDITS_KEY);
         });
     }
     

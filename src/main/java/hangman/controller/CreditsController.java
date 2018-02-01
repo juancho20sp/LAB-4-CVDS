@@ -14,6 +14,8 @@ package hangman.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import hangman.GUI;
 import hangman.SwingProject;
 import hangman.model.CreditsModel;
 import hangman.view.CreditsPanel;
@@ -46,7 +48,7 @@ public class CreditsController {
         panel.getBackButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                rootController.changeVisibleCard(SwingProject.FUNCTION_KEY);
+                rootController.changeVisibleCard(GUI.FUNCTION_KEY);
             }
         });
     }

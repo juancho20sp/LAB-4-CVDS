@@ -18,6 +18,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
+
+import hangman.GUI;
 import hangman.SwingProject;
 import hangman.model.GameOverModel;
 import hangman.model.Language;
@@ -55,7 +57,7 @@ public class GameOverController {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 gameControllerReference.resetGame();
-                rootController.changeVisibleCard(SwingProject.FUNCTION_KEY);
+                rootController.changeVisibleCard(GUI.FUNCTION_KEY);
             }
         });
         
@@ -63,7 +65,7 @@ public class GameOverController {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 gameControllerReference.resetGame();
-                rootController.changeVisibleCard(SwingProject.GAME_KEY);
+                rootController.changeVisibleCard(GUI.GAME_KEY);
             }
         });
         

@@ -43,9 +43,7 @@ principio de inversión de dependencias:
 
 ### Parte I
 
-1. Revise y adecue de ser necesario su proyecto de la primera entrega
-   para que la creación del diccionario, idioma y estilo visual se
-   realize utilizando el patrón Método Fábrica. 
+1. Clone el proyecto (no lo descargue!).
    
 2. A partir del código existente, implemente sólo los cascarones del
    modelo antes indicado.
@@ -101,24 +99,29 @@ principio de inversión de dependencias:
 ### Parte II
 
 En el primer taller se pedía que se utilizara el patrón FactoryMethod
-con el que se desacopla la creación de los objetos, para rediseñar un
-juego de ahorcado.
+que se desacopla la creación de los objetos, para rediseñar un juego
+de ahorcado (revisar createGUIUsingFactoryMethod en SwingProject, el
+constructor de la clase GUI y HangmanFactoryMethod).
 
-En este taller se va a utilizar un contenedor liviano (lightweight
-container) para hacer la creación e inyección de las dependencias.
-El contenedor ligero que se va a utilizar
+En este taller se va a utilizar un contenedor liviano ([GoogleGuice](https://github.com/google/guice)) el cual soporta la inyección de las dependencias.
+
+1. Utilizando el HangmanFactoryMethod (MétodoFabrica) incluya el
+   OriginalScore a la configuración.
 
 Incorpore el Contenedor Liviano Guice dentro del proyecto:
 
-* Agregue las dependencias necesarias en el pom.xml.
-* Configure la aplicación de manera que desde el programa SimpleApp NO
-  SE CONSTRUYA el manejador de órdenes directamente, sino a través de
+* Revise las dependencias necesarias en el pom.xml.
+* Modifique la inyección de dependencias utilizando guice en lugar del
+  método fábrica..
+* Configure la aplicación de manera que desde el programa SwingProject NO
+  SE CONSTRUYA el Score directamente, sino a través de
   Guice, y que a través de la configuración de la Inyección de
   Dependencias se pueda cambiar el comportamiento del mismo, por
   ejemplo:
-	* Calcular si IVA y sin propinas.
-	* Calcular con el IVA del régimen del 2016.
-	* Calcualr con el IVA unificado.
+	* Utilizar el esquema OriginalScore.
+	* Utilizar el esquema BonusScore.
+	* Utilizar el idioma francés.
+    * Utilizar el diccionario francés.
 	* etc...
 * Para lo anterior, [puede basarse en el ejemplo dado como
   referencia](https://github.com/PDSW-ECI/LightweighContainers_DepenendecyInjectionIntro-WordProcessor).

@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
+
+import hangman.GUI;
 import hangman.SwingProject;
 import hangman.model.SplashModel;
 import hangman.view.SplashPanel;
@@ -48,7 +50,7 @@ public class SplashController{
                 Timer timer = new Timer(model.getSplashTime(), new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        rootController.changeVisibleCard(SwingProject.FUNCTION_KEY);
+                        rootController.changeVisibleCard(GUI.FUNCTION_KEY);
                     }
                 });
                 timer.setRepeats(false);

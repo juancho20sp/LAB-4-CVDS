@@ -12,12 +12,12 @@ import java.util.List;
  *
  * @author 2106913
  */
-public abstract class DictionaryHangman {
+public abstract class HangmanDictionary {
 
     private List<Character> characterSet;
     private List<String> availableWords;
 
-    public DictionaryHangman() {
+    public HangmanDictionary() {
         characterSet = createCharacterSet();
     }
 

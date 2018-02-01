@@ -21,6 +21,8 @@ import javax.swing.JButton;
 import javax.swing.Timer;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
+
+import hangman.GUI;
 import hangman.SwingProject;
 import hangman.model.GameModel;
 import hangman.model.Language;
@@ -79,7 +81,7 @@ public class GameController{
                     Timer timer = new Timer(1500, new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            rootController.changeVisibleCard(SwingProject.GAME_OVER_KEY);
+                            rootController.changeVisibleCard(GUI.GAME_OVER_KEY);
                         }
                     });
                     timer.setRepeats(false);
@@ -119,7 +121,7 @@ public class GameController{
             @Override
             public void actionPerformed(ActionEvent ae) {
                 model.setScore(0);
-                rootController.changeVisibleCard(SwingProject.GAME_OVER_KEY);
+                rootController.changeVisibleCard(GUI.GAME_OVER_KEY);
             }
             
         });

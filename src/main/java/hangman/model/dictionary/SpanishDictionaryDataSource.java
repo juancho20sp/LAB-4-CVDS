@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author 2106913
  */
-public class SpanishDictionaryDataSource extends DictionaryHangman {
+public class SpanishDictionaryDataSource extends HangmanDictionary {
 
     static private String words[] = {
         "GENERAL",
