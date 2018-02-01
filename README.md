@@ -60,34 +60,37 @@ principio de inversión de dependencias:
 	git commit -m "especificación métodos"
 	```
 
-5. Teniendo en cuenta dichas especificaciones, en la clase donde se
+5. Revise el `pom.xml` e incluya las dependencias necesarias para QuickTheories.
+   Se puede basar en el `pom.xml` del [taller anterior](https://github.com/PDSW-ECI/GoF-Testing-BehavioralPatterns-CADTool_Rotation).
+
+6. Teniendo en cuenta dichas especificaciones, en la clase donde se
    implementarán las pruebas (GameScoreTest), en los
    comentarios iniciales, especifique las clases de equivalencia para
    las tres variantes de GameScore, e identifique
    condiciones de frontera. 
 
-6. Para cada clase de equivalencia y condición de frontera, implemente
+7. Para cada clase de equivalencia y condición de frontera, implemente
    una prueba utilizando QuickTheories.
 
-7. Haga commit de lo realizado hasta ahora. Desde la terminal:
+8. Haga commit de lo realizado hasta ahora. Desde la terminal:
 
 	```bash		
 	git add .			
 	git commit -m "implementación pruebas"
 	```
-8. Realice los ciclos TDD que hagan falta para implementar los
+9. Realice los ciclos TDD que hagan falta para implementar los
    'cascarones' realizados anteriormente: implementar, correr pruebas,
    agregar casos de prueba (si hace falta), refactorizar, ejecutar
    nuevamente las pruebas, etc.
 
-9. Al finalizar haga un nuevo commit:
+10. Al finalizar haga un nuevo commit:
 
 	```bash		
 	git add .			
 	git commit -m "implementación del modelo"
 	```
 
-10. Para comprimir el avance y NO PERDER el histórico de commits, use
+11. Para comprimir el avance y NO PERDER el histórico de commits, use
     el siguiente comando (dentro del directorio que va a comprimir,
     sin olvidar el punto):
 
