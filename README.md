@@ -113,9 +113,11 @@ Incorpore el Contenedor Liviano Guice dentro del proyecto:
 * Revise las dependencias necesarias en el pom.xml.
 * Modifique la inyección de dependencias utilizando guice en lugar del
   método fábrica..
-* Configure la aplicación de manera que desde el programa SwingProject NO
-  SE CONSTRUYA el Score directamente, sino a través de
-  Guice, y que a través de la configuración de la Inyección de
+* Configure la aplicación de manera que desde el programa SwingProject
+  NO SE CONSTRUYA el Score directamente, sino a través de Guice, asi
+  mismo como las otras dependencias que se están inyectando mediante
+  la fabrica.
+* Mediante la configuración de la Inyección de
   Dependencias se pueda cambiar el comportamiento del mismo, por
   ejemplo:
 	* Utilizar el esquema OriginalScore.
