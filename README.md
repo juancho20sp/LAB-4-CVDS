@@ -98,8 +98,8 @@ principio de inversión de dependencias:
 
 ### Parte II
 
-En el primer taller se pedía que se utilizara el patrón FactoryMethod
-que se desacopla la creación de los objetos, para rediseñar un juego
+En el taller se pedía utilizar el patrón FactoryMethod
+que desacopla la creación de los objetos. para rediseñar un juego
 de ahorcado (revisar createGUIUsingFactoryMethod en SwingProject, el
 constructor de la clase GUI y HangmanFactoryMethod).
 
