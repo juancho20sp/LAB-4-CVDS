@@ -1,0 +1,24 @@
+@startuml
+namespace hangman.model {
+class GameModel {
+}
+
+interface GameScore {
+   + calculateScore(correctCount : int, incorrectCount : int ) : int
+}
+
+class OriginalScore implements GameScore {
+   + calculateScore(correctCount : int, incorrectCount : int ) : int
+}
+
+class BonusScore implements GameScore {
+   + calculateScore(correctCount : int, incorrectCount : int ) : int
+}
+
+class PowerScore implements GameScore {
+   + calculateScore(correctCount : int, incorrectCount : int ) : int
+}
+
+GameModel -right-> GameScore : <<inyectado>>
+
+@enduml
