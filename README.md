@@ -59,8 +59,8 @@ principio de inversión de dependencias:
 	git commit -m "especificación métodos"
 	```
 
-5. Revise el `pom.xml` e incluya las dependencias necesarias para QuickTheories.
-   Se puede basar en el `pom.xml` del [taller anterior](https://github.com/PDSW-ECI/GoF-Testing-BehavioralPatterns-CADTool_Rotation).
+5. Actualice el archivo `pom.xml` e incluya las dependencias para la ultima versión de JUnit y la versión del compilador de Java a la versión 8 .
+   
 
 6. Teniendo en cuenta dichas especificaciones, en la clase donde se
    implementarán las pruebas (GameScoreTest), en los
