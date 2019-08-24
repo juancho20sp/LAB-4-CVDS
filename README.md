@@ -5,8 +5,7 @@
 ### Desarrollo Dirigido por Pruebas + DIP + DI + Contenedores Livianos
 
 
-Para este taller se va a trabajar sobre el juego del ahorcado del
-[primer taller](https://github.com/PDSW-ECI/GoF-CreationalPatterns-FactoryMethod-Hangman).
+Para este taller se va a trabajar sobre el juego del ahorcado.
 
 El sistema actual de puntuación del juego comienza en 100 puntos y va
 descontando 10 puntos cada vez que se propone una letra incorrecta.
@@ -70,7 +69,7 @@ principio de inversión de dependencias:
    condiciones de frontera. 
 
 7. Para cada clase de equivalencia y condición de frontera, implemente
-   una prueba utilizando QuickTheories.
+   una prueba utilizando JUnit.
 
 8. Haga commit de lo realizado hasta ahora. Desde la terminal:
 
@@ -95,7 +94,7 @@ principio de inversión de dependencias:
     sin olvidar el punto):
 
 ```bash	
-	zip -r NOMBRE.PROYECTO.zip .	
+	push <URL Repositorio>	
 ```
 
 
