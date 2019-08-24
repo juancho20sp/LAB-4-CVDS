@@ -77,10 +77,9 @@ principio de inversión de dependencias:
 	git add .			
 	git commit -m "implementación pruebas"
 	```
-9. Realice los ciclos TDD que hagan falta para implementar los
-   'cascarones' realizados anteriormente: implementar, correr pruebas,
-   agregar casos de prueba (si hace falta), refactorizar, ejecutar
-   nuevamente las pruebas, etc.
+9. Realice la implementación de los 'cascarones' realizados anteriormente.
+   Asegúrese que todas las pruebas unitarias creadas en los puntos anteriores
+   se ejecutan satisfactoriamente.
 
 10. Al finalizar haga un nuevo commit:
 
@@ -89,19 +88,18 @@ principio de inversión de dependencias:
 	git commit -m "implementación del modelo"
 	```
 
-11. Para comprimir el avance y NO PERDER el histórico de commits, use
-    el siguiente comando (dentro del directorio que va a comprimir,
-    sin olvidar el punto):
+11. Para sincronizar el avance en el respositorio y NO PERDER el trabajo, use
+    el comando de GIT para enviar los cambios:
 
 ```bash	
-	push <URL Repositorio>	
+	git push <URL Repositorio>	
 ```
 
 
 ### Parte II
 
-En el taller se pedía utilizar el patrón FactoryMethod
-que desacopla la creación de los objetos. para rediseñar un juego
+Actualmente se utiliza el patrón FactoryMethod
+que desacopla la creación de los objetos para diseñar un juego
 de ahorcado (revisar createGUIUsingFactoryMethod en SwingProject, el
 constructor de la clase GUI y HangmanFactoryMethod).
 
