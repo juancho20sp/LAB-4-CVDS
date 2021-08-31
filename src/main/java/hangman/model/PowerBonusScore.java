@@ -1,6 +1,6 @@
 package hangman.model;
 
-public class PowerScore implements GameScore {
+public class PowerBonusScore implements GameScore {
     private int score = 0;
 
     /**
