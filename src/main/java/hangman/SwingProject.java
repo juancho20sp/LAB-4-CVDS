@@ -51,13 +51,15 @@ public class SwingProject {
 
     public static GUI createGUIUsingGuice() {
         Injector injector = Guice.createInjector(new HangmanFactoryServices());
+
         return injector.getInstance(GUI.class);
     }
 
     //method: main
     //purpose: the entry-point to our application
     public static void main(String[] args) {
-        createGUIUsingFactoryMethod().play();
+        //createGUIUsingFactoryMethod().play();
+        createGUIUsingGuice().play();
     }
 
 }

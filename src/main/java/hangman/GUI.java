@@ -33,6 +33,7 @@ public class GUI {
     private Language language;
     private HangmanDictionary dictionary;
     private HangmanPanel hangmanPanel;
+    private GameScore gameScore;
 
     private MainFrameController mainFrameController;
 
@@ -48,14 +49,17 @@ public class GUI {
         this.language = factoryMethod.createLanguage();
         this.dictionary = factoryMethod.createDictionary();
         this.hangmanPanel = factoryMethod.createHangmanPanel();
+        //  0: Original, 1: Bonus, 2: PowerBonus
+        this.gameScore = factoryMethod.createGameScore(0);
     }
 
     @Inject
     // Use Guice constructor
-    public GUI(Language language, HangmanDictionary dictionary, HangmanPanel hangmanPanel){
+    public GUI(Language language, HangmanDictionary dictionary, HangmanPanel hangmanPanel, GameScore gameScore){
         this.language = language;
         this.dictionary= dictionary;
         this.hangmanPanel = hangmanPanel;
+        this.gameScore = gameScore;
     }
 
     //method: setup
@@ -80,11 +84,7 @@ public class GUI {
         );
 
         // CVDS - 2021 - II
-        GameScore gameScoreType = new OriginalScore();
-        //GameScore gameScoreType = new BonusScore();
-        //GameScore gameScoreType = new PowerBonusScore();
-
-        GameModel gameModel = new GameModel(dictionary, gameScoreType);
+        GameModel gameModel = new GameModel(dictionary, this.gameScore);
 
 
         gameController = new GameController(
