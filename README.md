@@ -1,4 +1,8 @@
 ### Escuela Colombiana de Ingeniería
+### LAB 4 - CVDS
+- Laura Valentina García León.
+- Juan David Murillo Giraldo.
+
 
 ### Procesos de Desarrollo de Software
 
