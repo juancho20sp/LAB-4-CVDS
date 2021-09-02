@@ -11,22 +11,22 @@ public class PowerBonusScore implements GameScore {
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount){
-        int bonus = 0;
+        double bonus = 0;
 
         for (int i = 1; i <= correctCount; i++){
-            bonus += (int)Math.pow(5, i);
+            bonus += Math.pow(5, i);
         }
 
-        int penalty = 8 * incorrectCount;
+        double penalty = 8 * incorrectCount;
 
         this.score += bonus;
         this.score -= penalty;
 
-        if (this.score < 0){
+        if (this.score < (double)0){
             this.score = 0;
         }
 
-        if (this.score > 500){
+        if (this.score > (double)500){
             this.score = 500;
         }
 

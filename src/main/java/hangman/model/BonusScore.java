@@ -21,6 +21,6 @@ public class BonusScore implements GameScore{
             this.score = 0;
         }
 
-        return score;
+        return this.score;
     }
 }

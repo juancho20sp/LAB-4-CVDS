@@ -35,6 +35,7 @@ import hangman.setup.guice.HangmanFactoryServices;
 
 public class SwingProject {
 
+    // mvn exec:java -"Dexec.mainClass"="hangman.SwingProject"
     public static final String CONTRIBUTORS[] = {
             "Omar Rodriguez, 008796203",
             "Nahid Enayatzadeh, 010164622",

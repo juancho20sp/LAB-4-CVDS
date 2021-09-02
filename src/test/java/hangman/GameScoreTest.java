@@ -76,7 +76,7 @@ public class GameScoreTest {
      */
     @Test
     public void bonusScoreMinimumTest() {
-        int result = originalScore.calculateScore(3, 28);
+        int result = bonusScore.calculateScore(3, 28);
 
         assertTrue(result == 0);
     }
@@ -86,7 +86,7 @@ public class GameScoreTest {
      */
     @Test
     public void bonusScoreMaximumTest() {
-        int result = originalScore.calculateScore(14, 0);
+        int result = bonusScore.calculateScore(14, 0);
 
         assertTrue( result == 140);
     }
@@ -96,7 +96,7 @@ public class GameScoreTest {
      */
     @Test
     public void powerBonusScoreTest() {
-        int result = bonusScore.calculateScore(4, 4);
+        int result = powerBonusScore.calculateScore(4, 4);
 
         assertTrue(result == 500);
     }
@@ -106,7 +106,7 @@ public class GameScoreTest {
      */
     @Test
     public void powerBonusScoreMinimumTest() {
-        int result = originalScore.calculateScore(3, 28);
+        int result = powerBonusScore.calculateScore(3, 28);
 
         assertTrue(result == 0);
     }
@@ -116,9 +116,9 @@ public class GameScoreTest {
      */
     @Test
     public void powerBonusScoreMaximumTest() {
-        int result = originalScore.calculateScore(14, 0);
+        int result = powerBonusScore.calculateScore(14, 0);
 
-        assertTrue( result == 500);
+        assertTrue(result == 500);
     }
 
 
