@@ -22,7 +22,12 @@ public class GameModel {
     private int incorrectCount;
     private int correctCount;
     private LocalDateTime dateTime;
+    // Aquí va el llamado al nuevo modelo
     private int gameScore;
+    // CVDS - 2021 - II
+    private GameScore myGameScore;
+
+
     private int[] lettersUsed;
     
     
@@ -32,16 +37,18 @@ public class GameModel {
     private String randomWord;
     private char[] randomWordCharArray;
     
-    
+
    
-    public GameModel(HangmanDictionary dictionary){
+    public GameModel(HangmanDictionary dictionary, GameScore myGameScore){
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
+        this.setMyGameScore(myGameScore);
+
         randomWord = selectRandomWord();
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        gameScore = myGameScore.getInitialScore();
         
     }
     
@@ -52,7 +59,7 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        gameScore = this.myGameScore.calculateScore(0, 0);
     }
 
     //setDateTime
@@ -74,10 +81,16 @@ public class GameModel {
         }
         if(positions.size() == 0){
             incorrectCount++;
-            gameScore -= 10;
         } else {
             correctCount += positions.size();
         }
+
+        // BOOM
+        System.out.println("\nBuenas: " + correctCount + "\nMalas: " + incorrectCount);
+        int finalScore = this.myGameScore.calculateScore(correctCount, incorrectCount);
+        System.out.println("\nFinal score: " + finalScore);
+        this.setGameScore(finalScore);
+
         return positions;
         
     }
@@ -141,5 +154,9 @@ public class GameModel {
 
     public List<Character> getCharacterSet() {
         return new ArrayList<>(dictionary.getCharacterSet());
+    }
+
+    public void setMyGameScore(GameScore gameScore){
+        this.myGameScore = gameScore;
     }
 }

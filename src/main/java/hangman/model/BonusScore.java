@@ -1,8 +1,6 @@
 package hangman.model;
 
 public class BonusScore implements GameScore{
-    private int score = 0;
-
     /**
      *
      * @param correctCount Amount of correct letters given by the user
@@ -11,16 +9,23 @@ public class BonusScore implements GameScore{
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount){
+        int score = 0;
+
         int bonus = 10 * correctCount;
         int penalty = 5 * incorrectCount;
 
-        this.score += bonus;
-        this.score -= penalty;
+        score += bonus;
+        score -= penalty;
 
-        if (this.score < 0){
-            this.score = 0;
+        if (score < 0){
+            score = 0;
         }
 
-        return this.score;
+        return score;
+    }
+
+    @Override
+    public int getInitialScore() {
+        return 0;
     }
 }

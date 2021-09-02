@@ -1,7 +1,7 @@
 package hangman.model;
 
 public class OriginalScore implements GameScore{
-    private int score = 100;
+    //private int score = 100;
 
     /**
      *
@@ -11,14 +11,20 @@ public class OriginalScore implements GameScore{
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount){
+        int score = 100;
         int penalty = 10 * incorrectCount;
 
-        this.score -= penalty;
+        score -= penalty;
 
-        if (this.score < 0){
-            this.score = 0;
+        if (score < 0){
+            score = 0;
         }
 
         return score;
+    }
+
+    @Override
+    public int getInitialScore() {
+        return 100;
     }
 }

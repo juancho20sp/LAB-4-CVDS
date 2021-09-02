@@ -79,7 +79,14 @@ public class GUI {
                 mainFrameController
         );
 
-        GameModel gameModel = new GameModel(dictionary);
+        // CVDS - 2021 - II
+        GameScore gameScoreType = new OriginalScore();
+        //GameScore gameScoreType = new BonusScore();
+        //GameScore gameScoreType = new PowerBonusScore();
+
+        GameModel gameModel = new GameModel(dictionary, gameScoreType);
+
+
         gameController = new GameController(
                 new GamePanel(gameModel.getCharacterSet(), hangmanPanel, language),
                 gameModel,
