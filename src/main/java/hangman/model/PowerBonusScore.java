@@ -2,7 +2,6 @@ package hangman.model;
 
 public class PowerBonusScore implements GameScore {
     /**
-     *
      * @param correctCount Amount of correct letters given by the user
      * @param incorrectCount Amount of incorrect letters given by the user
      * @return The final score of the user
@@ -17,7 +16,6 @@ public class PowerBonusScore implements GameScore {
         }
 
         double penalty = 8 * incorrectCount;
-
         score += bonus;
         score -= penalty;
 
