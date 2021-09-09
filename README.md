@@ -46,58 +46,70 @@ principio de inversión de dependencias:
 
 ### Parte I
 
-1. Clone el proyecto (no lo descargue!).
-   
-2. A partir del código existente, implemente sólo los cascarones del
+*  A partir del código existente, implemente sólo los cascarones del
    modelo antes indicado.
 
-3. Haga la especificación de los métodos calculateScore (de las tres
+*  Haga la especificación de los métodos calculateScore (de las tres
    variantes de GameScore), a partir de las especificaciones
    generales dadas anteriormente. Recuerde tener en cuenta: @pre,
    @pos, @param, @throws.
-
-4. Haga commit de lo realizado hasta ahora. Desde la terminal:
-
-	```bash		
-	git add .			
-	git commit -m "especificación métodos"
-	```
-
-5. Actualice el archivo `pom.xml` e incluya las dependencias para la ultima versión de JUnit y la versión del compilador de Java a la versión 8 .
+   
+  	* Interface. 
+   
+   ![Interface Score](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/InterfaceGameScore.png)
+   
+   	* Original Score. 
+   
+   ![Original Score](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/OriginalScore.png)
+   
+   	* Bonus Score. 
+   
+   ![Bonus Score](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/BonusScore.png)
+   
+   	* Powe Bonus Score. 
+   
+   ![PowerBonus Score](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/PowerBonus.png)
    
 
-6. Teniendo en cuenta dichas especificaciones, en la clase donde se
+
+* Actualice el archivo `pom.xml` e incluya las dependencias para la ultima versión de JUnit y la versión del compilador de Java a la versión 8 .
+	
+	* Actulización archivo pom. 
+	
+	![PomJUnit](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/pomJUnit.png)
+   
+
+* Teniendo en cuenta dichas especificaciones, en la clase donde se
    implementarán las pruebas (GameScoreTest), en los
    comentarios iniciales, especifique las clases de equivalencia para
    las tres variantes de GameScore, e identifique
    condiciones de frontera. 
 
-7. Para cada clase de equivalencia y condición de frontera, implemente
+	* Especificación de los limites para cada clase. 
+	
+	![GameScoreSpecification](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GameScoreTest1.png)
+
+* Para cada clase de equivalencia y condición de frontera, implemente
    una prueba utilizando JUnit.
 
-8. Haga commit de lo realizado hasta ahora. Desde la terminal:
-
-	```bash		
-	git add .			
-	git commit -m "implementación pruebas"
-	```
-9. Realice la implementación de los 'cascarones' realizados anteriormente.
+	* Implementación de pruebas. 
+	
+	![GameScoreTest](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GameScoreTest2.png)
+	
+	![GameScoreTest](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GameScoreTest3.png)
+	
+	![GameScoreTest](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GameScoreTest4.png)
+	
+	![GameScoreTest](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GameScoreTest5.png)
+	
+	
+* Realice la implementación de los 'cascarones' realizados anteriormente.
    Asegúrese que todas las pruebas unitarias creadas en los puntos anteriores
    se ejecutan satisfactoriamente.
+   
+   	* Ejecución de pruebas 
 
-10. Al finalizar haga un nuevo commit:
-
-	```bash		
-	git add .			
-	git commit -m "implementación del modelo"
-	```
-
-11. Para sincronizar el avance en el respositorio y NO PERDER el trabajo, use
-    el comando de GIT para enviar los cambios:
-
-```bash	
-	git push <URL Repositorio>	
-```
+	![Test](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/Test.png)
 
 
 ### Parte II
@@ -109,25 +121,66 @@ constructor de la clase GUI y HangmanFactoryMethod).
 
 En este taller se va a utilizar un contenedor liviano ([GoogleGuice](https://github.com/google/guice)) el cual soporta la inyección de las dependencias.
 
-1. Utilizando el HangmanFactoryMethod (MétodoFabrica) incluya el
+*  Utilizando el HangmanFactoryMethod (MétodoFabrica) incluya el
    OriginalScore a la configuración.
+   
+	* Hangman Factory Method 
+	
+	![HangmanFactoryMethod](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/HangmanFactoryMethod.png)
 
 Incorpore el Contenedor Liviano Guice dentro del proyecto:
 
 * Revise las dependencias necesarias en el pom.xml.
+* 
+	* Se añade la dependencia de guice
+	
+	![pomGuice](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/pomGuice.png)
+
 * Modifique la inyección de dependencias utilizando guice en lugar del
   método fábrica..
+  
+  	* Creación del GUI mediiante guice 
+
+	![Gui](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/CreateGUI.png)
+
 * Configure la aplicación de manera que desde el programa SwingProject
   NO SE CONSTRUYA el Score directamente, sino a través de Guice, asi
   mismo como las otras dependencias que se están inyectando mediante
   la fabrica.
+  
+  	* Modificación de HangmanFactoryService 
+  	
+	![Guice](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/Guice.png)
+  	
+  
 * Mediante la configuración de la Inyección de
   Dependencias se pueda cambiar el comportamiento del mismo, por
   ejemplo:
+  
 	* Utilizar el esquema OriginalScore.
+	
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GOriginalScore.png)
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GOriginalScore2.png)
+	
 	* Utilizar el esquema BonusScore.
+	
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GBonusScore.png)
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GBonusScore2.png)
+
 	* Utilizar el idioma francés.
-    * Utilizar el diccionario francés.
-	* etc...
-* Para lo anterior, [puede basarse en el ejemplo dado como
-  referencia](https://github.com/PDSW-ECI/LightweighContainers_DepenendecyInjectionIntro-WordProcessor).
+	
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GFrench.png)
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GFrench2.png)
+	
+   	* Utilizar el diccionario francés.
+	
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GFrench-Dict.png)
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GFrench-Dict2.png)
+
+	* Utilizar el idioma Español y el diccionario Español 
+
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GSpan-Dict.png)
+	![OScore](https://github.com/juancho20sp/LAB-4-CVDS/blob/master/resources/GSpan-Dict2.png)
+
+	
+
